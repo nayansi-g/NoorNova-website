@@ -1,4 +1,5 @@
-import BookDemoButton from "@/components/BookDemoButton";
+﻿import BookDemoButton from "@/components/BookDemoButton";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -7,22 +8,19 @@ export default function Footer() {
         <div className="grid gap-12 md:grid-cols-[1.35fr_1fr_1fr_1fr] md:gap-10">
           <div>
             <div className="flex items-center gap-3">
-              <span className="grid h-10 w-10 place-items-center rounded-2xl bg-white/10 ring-1 ring-white/15 backdrop-blur">
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M12 2.5c4.6 0 8.5 3.7 8.5 8.3 0 6.1-6.4 10.6-8.1 11.7a.75.75 0 0 1-.8 0C9.9 21.4 3.5 16.9 3.5 10.8 3.5 6.2 7.4 2.5 12 2.5Z"
-                    fill="white"
-                    opacity="0.95"
-                  />
-                </svg>
-              </span>
+              <Link
+                href="/"
+                className="inline-flex items-center gap-3 rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
+                aria-label="NoorNova Home"
+              >
+
+                <div className="text-lg font-bold text-white/95">
+                  Noor
+                  <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-teal-300 bg-clip-text text-transparent">
+                    Nova
+                  </span>
+                </div>
+              </Link>
             </div>
 
             <p className="mt-6 max-w-xl text-md leading-tight text-white/80">
@@ -88,7 +86,7 @@ export default function Footer() {
         <div className="mt-6 h-px w-full bg-white/10" />
 
         <div className="mt-5 flex items-center justify-between gap-6 pb-10 text-sm text-white/50 md:pb-6">
-          <div>© 2025 Noornova. All rights reserved.</div>
+          <div>© {new Date().getFullYear()} NoorNova. All rights reserved.</div>
           <BookDemoButton className="bg-gradient-to-r from-indigo-500 to-purple-600 px-5 py-2 rounded-md font-semibold text-white shadow-[0_16px_40px_rgba(74,93,255,0.35)]">
             Book Demo
           </BookDemoButton>
@@ -106,12 +104,19 @@ function FooterCol({ title, links }) {
       <ul className="mt-4 space-y-2 text-[14px] text-gray-300">
         {links.map((item) => (
           <li key={item.title}>
-            <a href={item.link} className="transition hover:text-white">
-              {item.title}
-            </a>
+            {item.link?.startsWith("/") ? (
+              <Link href={item.link} className="transition hover:text-white">
+                {item.title}
+              </Link>
+            ) : (
+              <a href={item.link} className="transition hover:text-white">
+                {item.title}
+              </a>
+            )}
           </li>
         ))}
       </ul>
     </div>
   );
 }
+

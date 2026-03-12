@@ -29,11 +29,12 @@ export default function Navbar() {
       className={`fixed left-0 right-0 top-0 z-50 transition-colors duration-200 ${headerClassName}`}
     >
       <div className="mx-auto flex w-full  items-center justify-between px-6 md:px-10 lg:px-20 py-4">
-        <div className="flex items-center gap-2">
-          <span
+        <Link href="/" className="flex items-center gap-3">
+          {/* <span
             className={`grid h-9 w-9 place-items-center rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.12)] ring-1 backdrop-blur-md ${
               isScrolled ? "bg-slate-900/5 ring-black/10" : "bg-white/10 ring-white/15"
             }`}
+            aria-hidden="true"
           >
             <svg
               width="18"
@@ -41,7 +42,6 @@ export default function Navbar() {
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
             >
               <path
                 d="M12 2.5c4.6 0 8.5 3.7 8.5 8.3 0 6.1-6.4 10.6-8.1 11.7a.75.75 0 0 1-.8 0C9.9 21.4 3.5 16.9 3.5 10.8 3.5 6.2 7.4 2.5 12 2.5Z"
@@ -55,8 +55,17 @@ export default function Navbar() {
                 </linearGradient>
               </defs>
             </svg>
+          </span> */}
+
+          <span className="hidden text-lg font-bold  sm:inline">
+            <span className={isScrolled ? "text-slate-900" : "text-white/95"}>
+              Noor
+            </span>
+            <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-teal-400 bg-clip-text text-transparent">
+              Nova
+            </span>
           </span>
-        </div>
+        </Link>
 
         <nav className="hidden items-center gap-7 text-sm font-semibold md:flex">
           <Link href="/" className={`transition-colors ${navLinkClassName}`}>
