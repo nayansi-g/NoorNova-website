@@ -65,21 +65,21 @@ export default function Navbar() {
           <Link href="/about" className={`transition-colors ${navLinkClassName}`}>
             About
           </Link>
-          <a href="/services" className={`transition-colors ${navLinkClassName}`}>
+          <Link href="/services" className={`transition-colors ${navLinkClassName}`}>
             Services
-          </a>
-          <a href="/#testimonials" className={`transition-colors ${navLinkClassName}`}>
+          </Link>
+          <Link href="/#testimonials" className={`transition-colors ${navLinkClassName}`}>
             Testimonials
-          </a>
-          <a href="/#insights" className={`transition-colors ${navLinkClassName}`}>
+          </Link>
+          <Link href="/#insights" className={`transition-colors ${navLinkClassName}`}>
             Insights
-          </a>
-          <a href="/#careers" className={`transition-colors ${navLinkClassName}`}>
+          </Link>
+          <Link href="/#careers" className={`transition-colors ${navLinkClassName}`}>
             Careers
-          </a>
-          <a href="/#contact" className={`transition-colors ${navLinkClassName}`}>
+          </Link>
+          <Link href="/#contact" className={`transition-colors ${navLinkClassName}`}>
             Contact
-          </a>
+          </Link>
         </nav>
 
      <div className="hidden md:block">   <BookDemoButton className="hero-btn-primary inline-flex h-10 items-center justify-center rounded-md px-5 text-sm font-semibold text-white shadow-[0_14px_35px_rgba(74,93,255,0.34)]">
