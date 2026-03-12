@@ -98,7 +98,7 @@ const About = () => {
   <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-44 bg-gradient-to-b from-transparent via-white/70 to-white" />
 </section>
  <div className="py-14 sm:py-20">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto px-6 md:px-10 lg:px-20">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
           
            {/* Content */}
@@ -130,7 +130,7 @@ const About = () => {
       </div>
     </div>
  <div className="py-14 sm:py-20">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto px-6 md:px-10 lg:px-20">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
           
           {/* Image */}
@@ -192,7 +192,7 @@ We envision a future where every local business has a complete AI-powered team w
       </div>
 
       <section className="bg-[#F3F5FF] py-14 sm:py-20">
-         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+         <div className="mx-auto max-w-7xl px-6 md:px-10 lg:px-20">
 
         {/* Header */}
         <div className="mb-10 text-center sm:mb-14">
@@ -240,7 +240,7 @@ We envision a future where every local business has a complete AI-powered team w
       </div>
       </section>
       <section className="bg-white py-14 sm:py-20">
-      <div className="mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto w-full max-w-7xl px-6 md:px-10 lg:px-20">
         
         <div className="rounded-3xl bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600 px-6 py-10 text-center text-white shadow-lg sm:px-8">
 

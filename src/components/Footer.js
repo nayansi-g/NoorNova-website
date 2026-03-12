@@ -3,7 +3,7 @@ import BookDemoButton from "@/components/BookDemoButton";
 export default function Footer() {
   return (
     <footer className="footer-shell relative mt-0 w-full">
-      <div className="mx-auto w-full max-w-7xl px-10 py-10">
+      <div className="mx-auto w-full  px-6 md:px-10 lg:px-14 py-10">
         <div className="grid gap-12 md:grid-cols-[1.35fr_1fr_1fr_1fr] md:gap-10">
           <div>
             <div className="flex items-center gap-3">

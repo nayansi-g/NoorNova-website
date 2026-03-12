@@ -28,7 +28,7 @@ export default function BlogPage() {
   const visibleLatestBlogs = showAllArticles ? latestBlogs : []
 
   return (
-    <main className="bg-white text-gray-900">
+    <main className="bg-white text-gray-900 px-6 md:px-10 lg:px-20">
       <section className="rounded-b-[50px]  px-4 pb-12  text-center sm:px-6 md:rounded-b-[80px] md:pb-16">
         <div className="text-center">
           <h2 className="text-[24px] font-bold leading-[1.02]  text-slate-950 sm:text-[34px] md:text-[46px]">
@@ -43,7 +43,7 @@ export default function BlogPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 pb-6 sm:px-6">
+      <section className="mx-auto  pb-6 ">
         {/* <div className="mb-5 flex items-end justify-between gap-4">
           <h2 className="text-2xl font-semibold md:text-3xl">Featured Insights</h2>
           
@@ -99,7 +99,7 @@ export default function BlogPage() {
       ) : null}
 
       {showAllArticles ? (
-        <section className="mx-auto max-w-6xl px-4 pb-20 pt-8 sm:px-6 md:pb-24">
+        <section className="mx-auto pb-20 pt-8 md:pb-24">
           <div className="mb-5 flex items-end justify-between gap-4">
             <h2 className="text-2xl font-semibold md:text-3xl">Latest Insights</h2>
           </div>

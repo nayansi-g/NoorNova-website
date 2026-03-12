@@ -74,8 +74,8 @@ export default function ContactPage() {
   }
 
   return (
-    <section className="bg-white px-10 py-16 sm:px-16 sm:py-20 lg:px-20">
-      <div className="mx-auto grid max-w-7xl items-center gap-10 md:grid-cols-2 lg:gap-16">
+    <section className="bg-white  py-16  sm:py-20 px-6 md:px-10 lg:px-20">
+      <div className="mx-auto grid items-center gap-10 md:grid-cols-2 lg:gap-16">
          <div className="pt-2">
           <h2 className="text-[24px] font-bold leading-[1.02] tracking-[-0.04em] text-slate-950 sm:text-[34px] md:text-[50px]">
             Get in{" "}

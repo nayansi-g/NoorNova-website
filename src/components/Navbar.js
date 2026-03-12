@@ -28,7 +28,7 @@ export default function Navbar() {
     <header
       className={`fixed left-0 right-0 top-0 z-50 transition-colors duration-200 ${headerClassName}`}
     >
-      <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4">
+      <div className="mx-auto flex w-full  items-center justify-between px-6 md:px-10 lg:px-20 py-4">
         <div className="flex items-center gap-2">
           <span
             className={`grid h-9 w-9 place-items-center rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.12)] ring-1 backdrop-blur-md ${

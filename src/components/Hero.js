@@ -38,7 +38,7 @@ const Hero =()=>{
       </span>
     </h1>
 
-    <p className="mt-5 max-w-xl text-md leading:6  md:leading-8 text-gray-700 md:text-lg">
+    <p className="mt-5 max-w-xl text-md leading:6  md:leading-8 text-gray-800 md:text-lg">
       AI Voice Agents answer, qualify and follow up with your leads 24/7 so
       your business never loses revenue.
     </p>

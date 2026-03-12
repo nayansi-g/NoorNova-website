@@ -45,7 +45,7 @@ export default function TestimonialSlider() {
   }, [current]);
 
   return (
-    <section className="py-16 sm:py-20">
+    <section className="py-16 sm:py-20 ">
       <div className="relative bg-[#f6f7fb] px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
       {/* Heading */}
       <div className="mb-10 text-center sm:mb-12">

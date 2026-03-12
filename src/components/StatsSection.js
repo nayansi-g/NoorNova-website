@@ -54,8 +54,8 @@ export default function StatsSection() {
   ];
 
   return (
-    <section className="bg-white py-16 sm:py-20">
-      <div className="mx-auto max-w-6xl px-4 text-center sm:px-6 lg:px-8">
+    <section className="bg-white py-16 sm:py-20 px-6 md:px-10 lg:px-20">
+      <div className="mx-auto text-center">
         
         {/* Heading */}
         <h2 className="text-3xl mx-auto  font-bold text-gray-900 sm:text-4xl md:text-5xl">
@@ -103,7 +103,7 @@ export default function StatsSection() {
       </div>
 
       <div className="py-14 sm:py-20">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
           
           {/* Image */}

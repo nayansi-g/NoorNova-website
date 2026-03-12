@@ -15,9 +15,9 @@ export default function RevenueCalculator() {
   const yearlyRevenue = weeklyRevenue * 52;
 
   return (
-    <section className="bg-[#FFF6EF] py-16 sm:py-20">
+    <section className="bg-[#FFF6EF] py-16 sm:py-20 px-6 md:px-10 lg:px-20">
 
-        <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
+        <div className="mx-auto text-center">
 
         {/* Badge */}
         <div className="inline-flex items-center gap-2 bg-red-100 text-red-600 text-sm font-medium px-4 py-1.5 rounded-full mb-6">
@@ -40,7 +40,7 @@ export default function RevenueCalculator() {
         </p>
 
       </div>
-      <div className="mx-auto mt-12 grid max-w-6xl gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:gap-10 lg:px-8">
+      <div className="mx-auto mt-12 grid  gap-8 lg:grid-cols-2 lg:gap-10 ">
 
         {/* LEFT PANEL */}
         <div className="rounded-2xl bg-white p-6 shadow-lg sm:p-8">
@@ -201,7 +201,7 @@ export default function RevenueCalculator() {
         </div>
       </div>
       <div className=" pt-12 sm:pt-16">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div className=" ">
         <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-blue-600 via-purple-600 to-teal-500 px-6 py-6 text-center text-white shadow-lg sm:px-10 sm:py-8">
 
           {/* Decorative Circles */}

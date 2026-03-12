@@ -26,7 +26,7 @@ export default function Careers() {
 
   return (
     <section className="w-full bg-[#F5F6FF] py-16 lg:py-20">
-      <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto w-full px-6 md:px-10 lg:px-20">
         <div className="text-center">
           <h2 className="text-[24px] font-bold leading-[1.02] tracking-[-0.04em] text-slate-950 sm:text-[34px] md:text-[50px]">
             Join Our{" "}
@@ -46,7 +46,7 @@ export default function Careers() {
         </div>
       </div>
 
-      <section className="px-10 pt-12 sm:px-16 sm:pt-16 lg:px-20">
+      <section className="px-6 md:px-10 lg:px-20 pt-12 sm:pt-16 ">
       <div className="mx-auto max-w-6xl rounded-3xl bg-white px-6 py-10 text-center shadow-lg sm:px-10">
 
         <h2 className="text-2xl md:text-2xl font-bold text-black">

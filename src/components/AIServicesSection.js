@@ -23,7 +23,7 @@ export default function AIServicesSection() {
     },
     {
       icon: MessageCircle,
-      badge: "$200/mo",
+      badge: "$200/month",
       badgeStyle: "bg-green-600 text-white",
       title: "WhatsApp Automation AI",
       description:
@@ -42,7 +42,7 @@ export default function AIServicesSection() {
   ];
 
   return (
-    <section className="bg-white px-10 py-16 sm:px-16 sm:py-20 lg:px-20">
+    <section className="bg-white px-6 md:px-10 lg:px-20 py-16  sm:py-20 ">
 
          <div className="text-center">
           <h2 className="text-[24px] font-bold leading-[1.02] tracking-[-0.02em] text-slate-950 sm:text-[34px] md:text-[50px]">
@@ -55,7 +55,7 @@ export default function AIServicesSection() {
            Learn how AI automation can help your business grow
           </p>
         </div>
-      <div className="mx-auto grid max-w-7xl gap-6 pt-10 lg:grid-cols-2 lg:gap-10">
+      <div className="mx-auto grid  gap-6 pt-10 lg:grid-cols-2 lg:gap-10">
         {services.map((service, i) => {
           const Icon = service.icon;
 
@@ -137,13 +137,13 @@ function AIFeaturesSection() {
 
   return (
     <section className="bg-white pt-12 sm:pt-16">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto ">
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="rounded-2xl bg-gray-50 p-5 transition sm:p-6"
+              className="rounded-2xl bg-gray-50 p-3 transition sm:p-4"
             >
               {/* Icon */}
               <div className="w-14 h-14 rounded-xl bg-gray-100 flex items-center justify-center text-gray-600">

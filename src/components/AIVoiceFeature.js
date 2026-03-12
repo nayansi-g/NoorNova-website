@@ -85,8 +85,8 @@ export default function AIVoiceFeatures() {
   ];
 
   return (
-    <section className="bg-[#F2F6FF] py-16 sm:py-20">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <section className="bg-[#F2F6FF] py-16 sm:py-20 px-6 md:px-10 lg:px-20">
+      <div className="mx-auto">
 
         <div className="text-center">
           <h2 className="text-[24px] font-bold leading-[1.02]  text-slate-950 sm:text-[34px] md:text-[46px]">
@@ -106,7 +106,7 @@ Never miss a call again. Our AI Voice Agent works around the clock to capture ev
             return (
               <div
                 key={i}
-                className="rounded-2xl bg-white p-6 shadow-md transition hover:shadow-lg"
+                className="rounded-xl bg-white p-6 shadow-sm transition hover:shadow-lg"
               >
                 {/* Icon */}
                 <div
