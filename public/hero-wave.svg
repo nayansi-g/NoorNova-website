@@ -1,0 +1,21 @@
+<svg width="1600" height="110" viewBox="0 0 1600 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="w" x1="0" y1="55" x2="1600" y2="55">
+      <stop stop-color="#2F79FF" stop-opacity="0.55"/>
+      <stop offset="0.45" stop-color="#7C3AED" stop-opacity="0.52"/>
+      <stop offset="1" stop-color="#14B8A6" stop-opacity="0.5"/>
+    </linearGradient>
+  </defs>
+  <path
+    d="M0 62
+       C120 24, 240 94, 360 62
+       S600 30, 720 62
+       S960 92, 1080 62
+       S1320 24, 1440 62
+       S1560 94, 1600 62"
+    stroke="url(#w)"
+    stroke-width="3"
+    stroke-linecap="round"
+    opacity="0.75"
+  />
+</svg>
