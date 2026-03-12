@@ -4,6 +4,13 @@ import BookDemoButton from "@/components/BookDemoButton";
 import { IconBase } from "react-icons";
 import { FaWhatsapp } from "react-icons/fa";
 
+export const metadata = {
+  title: "Services",
+  description:
+    "Explore NoorNova services: AI voice agents, lead generation, follow-up automation, and messaging workflows for local businesses.",
+  alternates: { canonical: "/services" },
+};
+
 const Services = () => {
     const subfeatures = [
         {

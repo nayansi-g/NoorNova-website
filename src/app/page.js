@@ -9,6 +9,13 @@ import AIVoiceFeatures from "@/components/AIVoiceFeature";
 import RevenueCalculator from "@/components/RevenueCalculator";
 import Hero from "@/components/Hero";
 
+export const metadata = {
+  title: "AI Automation for Local Businesses",
+  description:
+    "NoorNova builds AI automation tools that help local businesses capture every lead, answer every call, and grow revenue.",
+  alternates: { canonical: "/" },
+};
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
@@ -29,4 +36,3 @@ export default function Home() {
     </div>
   );
 }
-

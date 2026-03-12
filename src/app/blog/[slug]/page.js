@@ -71,9 +71,18 @@ export default async function BlogDetailsPage({ params }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
       />
-      <section className="rounded-b-[50px] bg-gray-300 px-4 pb-12 pt-28 sm:px-6 md:rounded-b-[80px] md:pb-16 md:pt-32">
-        <div className="mx-auto max-w-4xl">
-          <Link href="/blog" className="mb-6 inline-flex items-center gap-2 text-sm font-medium text-gray-700 hover:text-black">
+
+      <section className="relative w-full overflow-hidden border-b border-gray-100">
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-70"
+          style={{ backgroundImage: "url('/3Dimg.jpg')" }}
+        />
+        <div className="absolute inset-0 bg-[url('/hero-network.svg')] bg-cover bg-center opacity-50" />
+        <div className="absolute inset-0 hero-image-overlay" />
+
+        <div className="relative z-10 mx-auto w-full max-w-6xl px-6 pb-14 pt-28 md:px-10 lg:px-20">
+         <div className="mx-auto max-w-4xl">
+          <Link href="/#insights" className="mb-6 inline-flex items-center gap-2 text-sm font-medium text-gray-700 hover:text-black">
             <MoveLeft className="h-4 w-4" />
             Back to Blog
           </Link>
@@ -86,12 +95,14 @@ export default async function BlogDetailsPage({ params }) {
             <span>{formatDate(blog.date)}</span>
             <span>•</span>
             <span>{blog.readTime}</span>
-            <span>•</span>
-            <span>{blog.author}</span>
+            {/* <span>•</span> */}
+            {/* <span>{blog.author}</span> */}
           </div>
         </div>
-      </section>
+        </div>
 
+        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent via-white/70 to-white" />
+      </section>
       <article className="mx-auto max-w-4xl px-4 pb-20 pt-12 sm:px-6 md:pb-24 md:pt-14">
         <div className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm md:p-7">
           <div className="mb-5 overflow-hidden rounded-2xl bg-gray-100">

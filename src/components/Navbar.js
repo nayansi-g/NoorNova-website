@@ -18,7 +18,7 @@ export default function Navbar() {
 
   const headerClassName = isScrolled
     ? "bg-white/95 text-slate-900 shadow-sm ring-1 ring-black/5 backdrop-blur"
-    : "bg-transparent text-white backdrop-blur-md ";
+    : "bg-transparent text-white";
 
   const navLinkClassName = isScrolled
     ? "text-slate-700 hover:text-slate-950"
@@ -57,7 +57,7 @@ export default function Navbar() {
             </svg>
           </span> */}
 
-          <span className="hidden text-lg font-bold  sm:inline">
+          <span className="whitespace-nowrap text-md md:text-lg font-bold">
             <span className={isScrolled ? "text-slate-900" : "text-white/95"}>
               Noor
             </span>

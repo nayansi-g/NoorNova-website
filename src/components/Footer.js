@@ -67,10 +67,10 @@ export default function Footer() {
           <FooterCol
             title="Products"
             links={[
-              {title:"AI Voice Agents", link:"#"},
-              {title:"WhatsApp Automation", link:"#"},
-              {title:"AI Lead Generation", link:"#"},
-              {title:"AI Review Booster", link:"#"},
+              {title:"AI Voice Agents", link:"/services"},
+              {title:"WhatsApp Automation", link:"/services"},
+              {title:"AI Lead Generation", link:"/services"},
+              {title:"AI Review Booster", link:"/services"},
             ]}
           />
           <FooterCol
@@ -79,7 +79,12 @@ export default function Footer() {
           />
           <FooterCol
             title="Resources"
-            links={[{title:"Documentation", link:"#"} ,{title:"Help Center", link:"#"}, {title:"Privacy Policy", link:"#"}, {title:"Terms of Service", link:"#"}]}
+            links={[
+              { title: "Documentation", link: "/documentation" },
+              { title: "Help Center", link: "/help_center" },
+              { title: "Privacy Policy", link: "/privacy_policy" },
+              { title: "Terms of Service", link: "/terms_of_service" },
+            ]}
           />
         </div>
 
@@ -119,4 +124,3 @@ function FooterCol({ title, links }) {
     </div>
   );
 }
-

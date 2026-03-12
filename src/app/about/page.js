@@ -1,6 +1,13 @@
 ﻿import { Headphones, Heart, Lightbulb, Rocket, Settings, ShieldCheck, TrendingUp } from "lucide-react";
 import Image from "next/image";
 
+export const metadata = {
+  title: "About",
+  description:
+    "Learn about NoorNova’s mission to help local businesses grow with AI automation, voice agents, and lead follow-up.",
+  alternates: { canonical: "/about" },
+};
+
 const About = () => {
      const features = [
     {
@@ -89,7 +96,7 @@ const About = () => {
     </h1>
 
     <p className="mt-5 max-w-2xl text-base leading-7 text-gray-700 sm:text-lg sm:leading-8">
-      Noornova empowers local businesses across the United States to capture every lead, answer every call, and grow revenue through intelligent AI automation.
+      NoorNova empowers local businesses across the United States to capture every lead, answer every call, and grow revenue through intelligent AI automation.
     </p>
 
   </div>
@@ -198,7 +205,7 @@ We envision a future where every local business has a complete AI-powered team w
         <div className="mb-10 text-center sm:mb-14">
           <h2 className="text-[24px] font-bold leading-[1.02]  text-slate-950 sm:text-[34px] md:text-[46px]">
             Why Choose{" "}
-            <span className="bg-gradient-to-r from-blue-600 via-purple-500 to-teal-500 bg-clip-text text-transparent">Noornova</span>
+            <span className="bg-gradient-to-r from-blue-600 via-purple-500 to-teal-500 bg-clip-text text-transparent">NoorNova</span>
           </h2>
 
           <p className="text-gray-600 mt-3">
@@ -251,7 +258,7 @@ We envision a future where every local business has a complete AI-powered team w
 
           {/* Description */}
           <p className="mx-auto mt-6 max-w-2xl text-base text-white/90 sm:text-lg">
-            Join hundreds of local businesses using Noornova AI to capture more
+            Join hundreds of local businesses using NoorNova AI to capture more
             leads and grow revenue.
           </p>
 
