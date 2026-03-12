@@ -93,7 +93,7 @@ export default function ContactPage() {
             <InfoRow
               tone="blue"
               title="Email Us"
-              lines={["hello@noornova.com"]}
+              lines={["hello@noornova.xyz"]}
               icon={
                 <svg
                   viewBox="0 0 24 24"
@@ -121,7 +121,7 @@ export default function ContactPage() {
             <InfoRow
               tone="purple"
               title="Call Us"
-              lines={["+1 (800) 555-1234"]}
+              lines={["+1 501 501 5137"]}
               icon={
                 <svg
                   viewBox="0 0 24 24"
@@ -140,7 +140,7 @@ export default function ContactPage() {
             <InfoRow
               tone="teal"
               title="Visit Us"
-              lines={["San Francisco, CA", "United States"]}
+              lines={["595 Market St, San Francisco, CA 94105, USA."]}
               icon={
                 <svg
                   viewBox="0 0 24 24"

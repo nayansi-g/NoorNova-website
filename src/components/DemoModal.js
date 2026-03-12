@@ -1,9 +1,39 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { X } from "lucide-react";
 
+const SCRIPT_URL =
+  process.env.NEXT_PUBLIC_DEMO_SHEET_SCRIPT_URL ||
+    "https://script.google.com/macros/s/AKfycbyFLMjUoc3tFtASd4mzqGmuMjXTplAAmaRUE5R1bJgp5WVqztvOHVDZEL3hrEdadvAJZw/exec"
+
 export default function DemoModal({ open, onClose }) {
+  const [fullName, setFullName] = useState("");
+  const [businessName, setBusinessName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [website, setWebsite] = useState("");
+  const [industry, setIndustry] = useState("");
+  const [callsPerDay, setCallsPerDay] = useState("");
+  const [goals, setGoals] = useState([]);
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [error, setError] = useState("");
+  const closeTimerRef = useRef(null);
+
+  const callsOptions = useMemo(() => ["1-10", "10-30", "30-50", "50+"], []);
+  const goalsOptions = useMemo(
+    () => [
+      "Answer calls",
+      "Lead qualification",
+      "Appointment booking",
+      "Customer support",
+      "Follow-ups",
+    ],
+    [],
+  );
+
   useEffect(() => {
     if (!open) return;
 
@@ -23,6 +53,81 @@ export default function DemoModal({ open, onClose }) {
       document.body.style.overflow = original;
     };
   }, [open]);
+
+  useEffect(() => {
+    if (!open) return;
+    setIsSuccess(false);
+    setError("");
+    if (closeTimerRef.current) {
+      clearTimeout(closeTimerRef.current);
+      closeTimerRef.current = null;
+    }
+  }, [open]);
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    setError("");
+    setIsSubmitting(true);
+    if (closeTimerRef.current) {
+      clearTimeout(closeTimerRef.current);
+      closeTimerRef.current = null;
+    }
+
+    try {
+      const formBody = new URLSearchParams();
+
+      // Send keys in a couple common formats (helps match your Apps Script)
+      formBody.append("fullName", fullName);
+      formBody.append("name", fullName);
+
+      formBody.append("businessName", businessName);
+      formBody.append("business", businessName);
+
+      formBody.append("email", email);
+      formBody.append("phone", phone);
+      formBody.append("mobile", phone);
+
+      formBody.append("website", website);
+      formBody.append("industry", industry);
+
+      formBody.append("callsPerDay", callsPerDay);
+      formBody.append("calls", callsPerDay);
+
+      formBody.append("goals", goals.join(", "));
+
+      await fetch(SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+        },
+        body: formBody.toString(),
+      });
+
+      setIsSuccess(true);
+      setFullName("");
+      setBusinessName("");
+      setEmail("");
+      setPhone("");
+      setWebsite("");
+      setIndustry("");
+      setCallsPerDay("");
+      setGoals([]);
+
+      // Close automatically after successful submission
+      closeTimerRef.current = setTimeout(() => {
+        onClose?.();
+      }, 800);
+    } catch (err) {
+      setError(
+        err instanceof Error
+          ? err.message
+          : "Something went wrong. Please try again.",
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
 
   if (!open) return null;
 
@@ -58,32 +163,55 @@ export default function DemoModal({ open, onClose }) {
             </p>
 
             {/* Form */}
-            <form className="space-y-5">
+            <form className="space-y-5" onSubmit={handleSubmit}>
+              {isSuccess ? (
+                <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-4 text-sm text-emerald-800">
+                  Thanks! Your details were submitted successfully. We&apos;ll
+                  contact you soon.
+                </div>
+              ) : null}
+              {error ? (
+                <div className="rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-700">
+                  {error}
+                </div>
+              ) : null}
 
               {/* Row */}
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <input
                   type="text"
                   placeholder="John Smith"
                   className="w-full rounded-lg border p-3"
+                  value={fullName}
+                  onChange={(e) => setFullName(e.target.value)}
+                  required
                 />
                 <input
                   type="text"
                   placeholder="Your Business"
                   className="w-full rounded-lg border p-3"
+                  value={businessName}
+                  onChange={(e) => setBusinessName(e.target.value)}
+                  required
                 />
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <input
                   type="email"
-                  placeholder="john@business.com"
+                  placeholder="john@gmail.com"
                   className="w-full rounded-lg border p-3"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
                 />
                 <input
                   type="tel"
                   placeholder="+1 (555) 000-0000"
                   className="w-full rounded-lg border p-3"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  required
                 />
               </div>
 
@@ -92,11 +220,18 @@ export default function DemoModal({ open, onClose }) {
                 type="text"
                 placeholder="https://yourbusiness.com"
                 className="w-full rounded-lg border p-3"
+                value={website}
+                onChange={(e) => setWebsite(e.target.value)}
               />
 
               {/* Industry */}
-              <select className="w-full rounded-lg border p-3">
-                <option>Select your industry</option>
+              <select
+                className="w-full rounded-lg border p-3"
+                value={industry}
+                onChange={(e) => setIndustry(e.target.value)}
+                required
+              >
+                <option value="">Select your industry</option>
                 <option>Real Estate</option>
                 <option>Healthcare</option>
                 <option>Home Services</option>
@@ -110,16 +245,24 @@ export default function DemoModal({ open, onClose }) {
                 </p>
 
                 <div className="grid grid-cols-4 gap-3">
-                  {["1-10", "10-30", "30-50", "50+"].map((range) => (
+                  {callsOptions.map((range) => (
                     <button
                       type="button"
                       key={range}
-                      className="rounded-lg border py-2 text-sm hover:bg-gray-100"
+                      onClick={() => setCallsPerDay(range)}
+                      className={`rounded-lg border py-2 text-sm transition hover:bg-gray-100 ${
+                        callsPerDay === range
+                          ? "border-blue-600 bg-blue-50"
+                          : "border-gray-200 bg-white"
+                      }`}
                     >
                       {range}
                     </button>
                   ))}
                 </div>
+                <p className="mt-2 text-xs text-gray-500">
+                  {callsPerDay ? `Selected: ${callsPerDay}` : "Select one option"}
+                </p>
               </div>
 
               {/* Automation Goals */}
@@ -129,15 +272,18 @@ export default function DemoModal({ open, onClose }) {
                 </p>
 
                 <div className="space-y-2 text-sm">
-                  {[
-                    "Answer calls",
-                    "Lead qualification",
-                    "Appointment booking",
-                    "Customer support",
-                    "Follow-ups",
-                  ].map((item) => (
+                  {goalsOptions.map((item) => (
                     <label key={item} className="flex items-center gap-2">
-                      <input type="checkbox" />
+                      <input
+                        type="checkbox"
+                        checked={goals.includes(item)}
+                        onChange={(e) => {
+                          setGoals((prev) => {
+                            if (e.target.checked) return [...prev, item];
+                            return prev.filter((x) => x !== item);
+                          });
+                        }}
+                      />
                       {item}
                     </label>
                   ))}
@@ -147,9 +293,10 @@ export default function DemoModal({ open, onClose }) {
               {/* Submit */}
               <button
                 type="submit"
-                className="w-full rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 py-3 font-semibold text-white"
+                disabled={isSubmitting || !callsPerDay}
+                className="w-full rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 py-3 font-semibold text-white disabled:cursor-not-allowed disabled:opacity-60"
               >
-                Schedule My Demo
+                {isSubmitting ? "Submitting..." : "Schedule My Demo"}
               </button>
 
             </form>
